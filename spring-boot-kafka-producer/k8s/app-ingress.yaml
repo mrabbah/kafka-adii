@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sb-kafka-producer-ingress
+  namespace: kafka
+spec:
+  rules:
+  - host: demo-mydomain.com
+    http:
+      paths:
+      - backend:
+          serviceName: sb-kafka-service
+          servicePort: 8080
+        path: /
+
