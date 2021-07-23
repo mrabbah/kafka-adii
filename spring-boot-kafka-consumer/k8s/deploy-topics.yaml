@@ -1,0 +1,24 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaUser
+metadata:
+  name: java-kafka-consumer
+  labels:
+    strimzi.io/cluster: kafka-cluster
+spec:
+  authentication:
+    type: tls
+  authorization:
+    type: simple
+    acls:
+      - resource:
+          type: topic
+          name: filtred-users-parallel
+        operation: Read
+      - resource:
+          type: topic
+          name: filtred-users-parallel
+        operation: Describe
+      - resource:
+          type: group
+          name: java-kafka-consumer
+        operation: Read

@@ -45,12 +45,8 @@ spec:
           - name: BOOTSTRAP_SERVERS_PORT
             value: "9093"  
           - name: TOPIC
-            value: topic-prod-01
+            value: users-topic-parallel
           - name: SHEMA_REGISTRY_ENDPOINT
             value: "schema-registry-client"
           - name: SHEMA_REGISTRY_PORT
             value: "8081"
-          - name: SHEMA_REGISTRY_LOGIN
-            value: "sruser"
-          - name: SHEMA_REGISTRY_PASSWORD
-            value: "SrUser2021"

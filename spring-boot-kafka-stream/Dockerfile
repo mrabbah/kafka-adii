@@ -10,6 +10,6 @@ ENV VERSION ${version}
 
 COPY ./scripts/ /bin
 
-ADD target/spring-boot-kafka-producer-0.0.1-SNAPSHOT.jar /
+ADD target/spring-boot-kafka-stream-0.0.1-SNAPSHOT.jar /
 
-CMD ["/bin/run.sh", "/spring-boot-kafka-producer-0.0.1-SNAPSHOT.jar"]
+CMD ["/bin/run.sh", "/spring-boot-kafka-stream-0.0.1-SNAPSHOT.jar"]

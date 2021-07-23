@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaTopic
 metadata:
-  name: topic-prod-01
+  name: users-topic-parallel
   labels:
       strimzi.io/cluster: kafka-cluster
 spec:
@@ -22,13 +22,13 @@ spec:
     acls:
       - resource:
           type: topic
-          name: topic-prod-01
+          name: users-topic-parallel
         operation: Write
       - resource:
           type: topic
-          name: topic-prod-01
+          name: users-topic-parallel
         operation: Create
       - resource:
           type: topic
-          name: topic-prod-01
+          name: users-topic-parallel
         operation: Describe

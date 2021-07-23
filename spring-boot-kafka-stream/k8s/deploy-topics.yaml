@@ -1,7 +1,7 @@
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaTopic
 metadata:
-  name: topic-prod-01
+  name: filtred-users-parallel
   labels:
       strimzi.io/cluster: kafka-cluster
 spec:
@@ -11,7 +11,7 @@ spec:
 apiVersion: kafka.strimzi.io/v1beta1
 kind: KafkaUser
 metadata:
-  name: sbproducer
+  name: sbstream
   labels:
     strimzi.io/cluster: kafka-cluster
 spec:
@@ -22,13 +22,21 @@ spec:
     acls:
       - resource:
           type: topic
-          name: topic-prod-01
+          name: users-topic-parallel
+        operation: Read
+      - resource:
+          type: topic
+          name: users-topic-parallel
+        operation: Describe
+      - resource:
+          type: topic
+          name: filtred-users-parallel
         operation: Write
       - resource:
           type: topic
-          name: topic-prod-01
+          name: ufiltred-users-parallel
         operation: Create
       - resource:
           type: topic
-          name: topic-prod-01
+          name: filtred-users-parallel
         operation: Describe

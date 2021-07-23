@@ -15,12 +15,8 @@ public class ConsumerController {
 	
 	@GetMapping("/")
 	@ResponseBody String index() {
+		consumerService.consume();
 		return "";
-		/*try {
-			return producerService.rafalMessages(5);
-		} catch (InterruptedException e) {
-			return e.getMessage();
-		}*/
 		
 	}
 }
